@@ -1,0 +1,20 @@
+wordpressUsername: admin
+wordpressPassword: ${password}
+wordpressEmail: user@example.com
+wordpressFirstName: Demo
+wordpressLastName: Fresh
+wordpressBlogName: Demo's Blog!
+replicaCount: 1
+service:
+  type: ClusterIP
+  ports:
+    http: 80
+    https: 443
+ingress:
+  enabled: true
+  pathType: ImplementationSpecific
+  hostname: ${app_name}.${domain}
+  annotations: 
+    nginx.ingress.kubernetes.io/proxy-body-size: 128m
+  tls: false
+  ingressClassName: "nginx"

@@ -1,0 +1,5 @@
+controller:
+  service:
+    externalTrafficPolicy: Local
+  config:
+    use-forwarded-headers: "true"
